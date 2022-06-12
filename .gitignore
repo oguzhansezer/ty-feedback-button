@@ -1,7 +1,5 @@
 node_modules
 dist
 .env
-webpack.config.js
-webpack.prod.js
-webpack.dev.js
+
 
