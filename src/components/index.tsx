@@ -20,6 +20,7 @@ export interface Props {
     formTitleClassName?: string;
     formTitleColor?: string;
     formTitleAlign?: 'left' | 'center' | 'right';
+    onSubmit?: () => void;
 }
 
 /*
@@ -47,6 +48,7 @@ const FeedbackModal = (props: Props) => {
         formTitleClassName = '',
         formTitleColor = 'red',
         formTitleAlign = 'center'
+        onSubmit = () => {}
     } = props;
 
     const handleModalOpen = () => {
@@ -89,7 +91,7 @@ const FeedbackModal = (props: Props) => {
                     {pageTypeContext.pageType === 'success' ? (
                         <Success successText={successText} />
                     ) : (
-                        <Form />
+                        <Form onSubmit={} />
                     )}
                 </Modal>
             )}

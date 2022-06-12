@@ -7,11 +7,14 @@ import { PageContext } from '../../providers/PageProvider';
 import { PAGE_TYPE } from '../../constants';
 const configValue = 'https://api.sheetmonkey.io/form/rRjBvKqTE6oDZe8AEZxxPt';
 
-export const Form = () => {
+interface Props {
+    onSubmit: () => void;
+}
+export const Form = (props: Props) => {
     const ref = useRef<HTMLFormElement>(null);
     const pageValidateContext = useContext(PageValidateContext);
     const pageContext = useContext(PageContext);
-
+    const { onSubmit } = props;
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         pageValidateContext.handleValidate(e.target.value.trim().length > 3);
     };
@@ -27,6 +30,7 @@ export const Form = () => {
                 if (res.ok) {
                     pageContext.changePage(PAGE_TYPE.SUCCESS);
                     console.log('SUCCESSFULLY SUBMITTED', res);
+                    onSubmit?.();
                 } else {
                     console.log('ERROR SUBMITTING', res);
                     //hata ekranı göster
