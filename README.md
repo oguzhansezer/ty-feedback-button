@@ -2,12 +2,14 @@
 
 ## _React Feedback Component_
 
-for live demo [live demo](https://react-for-feedback-button-6czlghbxv-oguzhansezer.vercel.app/)
+for  [live demo](https://react-for-feedback-button-6czlghbxv-oguzhansezer.vercel.app/)
 there is a icon at right corner click it!
 
 ## Features
 
 -   Collects all feedback at GoogleSheets
+-   Customizable interface
+-   Easy integration
 
 ## Installation
 
