@@ -39,3 +39,4 @@ Feedbacks at [google sheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTr
 | formTitleClassName      | string                        |
 | formTitleColor          | string                        |
 | formTitleAlign          | 'left' or'center' or 'right'; |
+| onSubmit()              | () => void |
