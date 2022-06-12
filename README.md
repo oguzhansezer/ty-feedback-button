@@ -13,7 +13,7 @@ there is a icon at right corner click it!
 
 ty-feedbkack-button requires [Node.js](https://nodejs.org/) to run.
 
-Install the dependencies and devDependencies and start the server.
+
 
 ```sh
 npm i ty-feedbkack-button
