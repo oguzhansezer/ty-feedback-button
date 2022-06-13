@@ -13,6 +13,7 @@ there is a icon at right corner click it!
 
 ## Installation
 
+This repo is an npm package. for use:
 ty-feedbkack-button requires [Node.js](https://nodejs.org/) to run.
 
 ```sh
