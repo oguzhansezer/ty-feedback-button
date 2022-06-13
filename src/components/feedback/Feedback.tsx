@@ -17,7 +17,7 @@ export const Feedback = (props: Props) => {
     } = props;
     return ReactDOM.createPortal(
         <Container {...restProps} onClick={onClick} className={className}>
-            <FeedbackIcon width={48} height={48} />
+            <FeedbackIcon width={60} height={60} />
         </Container>,
         mountNode as HTMLElement
     );
