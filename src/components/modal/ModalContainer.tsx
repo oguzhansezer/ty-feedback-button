@@ -88,6 +88,7 @@ const ContainerBody = styled.div<Props>`
   width: ${p => p.width || '90%'};
   padding={padding || var(--spacing-st)};
   position:relative;
+  
  
                
 `;

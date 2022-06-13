@@ -5,16 +5,16 @@ import { Button } from '../button';
 import { PageValidateContext } from '../../providers/PageValidateProvider';
 import { PageContext } from '../../providers/PageProvider';
 import { PAGE_TYPE } from '../../constants';
-const configValue = 'https://api.sheetmonkey.io/form/rRjBvKqTE6oDZe8AEZxxPt';
 
 interface Props {
     onSubmit: () => void;
+    sheetMonkeyUrl: string;
 }
 export const Form = (props: Props) => {
     const ref = useRef<HTMLFormElement>(null);
     const pageValidateContext = useContext(PageValidateContext);
     const pageContext = useContext(PageContext);
-    const { onSubmit } = props;
+    const { onSubmit, sheetMonkeyUrl } = props;
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         pageValidateContext.handleValidate(e.target.value.trim().length > 3);
     };
@@ -22,7 +22,7 @@ export const Form = (props: Props) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!ref.current) return;
-        fetch(configValue as string, {
+        fetch(sheetMonkeyUrl as string, {
             method: 'POST',
             body: new FormData(ref.current)
         })

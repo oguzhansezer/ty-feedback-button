@@ -6,11 +6,11 @@ import { ModalContent } from './modal/Content';
 import { Form } from './form';
 import { Success } from './success';
 import { PageContext } from '../providers/PageProvider';
-
+import { PAGE_TYPE } from '../constants/';
 export interface Props {
+    sheetMonkeyUrl: string;
     formTitleText?: string;
     formContentText?: string;
-    successContentText?: string;
     modalWidth?: string | number;
     modalZIndex?: number;
     modalClosable?: boolean;
@@ -39,7 +39,6 @@ const FeedbackModal = (props: Props) => {
     const {
         formTitleText = 'SEND YOUR FEEDBACK',
         formContentText = '',
-        successContentText = '',
         modalWidth = '90%',
         successText = 'WE HAVE GOT YOUR FEEDBACK',
         modalClassName = '',
@@ -47,8 +46,9 @@ const FeedbackModal = (props: Props) => {
         modalZIndex = 1300,
         formTitleClassName = '',
         formTitleColor = 'red',
-        formTitleAlign = 'center'
-        onSubmit = () => {}
+        formTitleAlign = 'center',
+        onSubmit = () => {},
+        sheetMonkeyUrl
     } = props;
 
     const handleModalOpen = () => {
@@ -70,29 +70,32 @@ const FeedbackModal = (props: Props) => {
                     className={modalClassName}
                     zIndex={modalZIndex}
                 >
-                    {pageTypeContext.pageType === 'form' && (
-                        <ModalTitle
-                            titleAlign={formTitleAlign}
-                            titleColor={formTitleColor}
-                            className={formTitleClassName}
-                        >
-                            {formTitleText}
-                        </ModalTitle>
-                    )}
-
-                    {pageTypeContext.pageType === 'form' && formContentText && (
-                        <ModalContent>{formContentText}</ModalContent>
-                    )}
-                    {pageTypeContext.pageType === 'success' &&
-                        successContentText && (
-                            <ModalContent>{successContentText}</ModalContent>
+                    <>
+                        {pageTypeContext.pageType === PAGE_TYPE.FORM && (
+                            <ModalTitle
+                                titleAlign={formTitleAlign}
+                                titleColor={formTitleColor}
+                                className={formTitleClassName}
+                            >
+                                {formTitleText}
+                            </ModalTitle>
+                        )}
+                        {pageTypeContext.pageType === PAGE_TYPE.SUCCESS && (
+                            <Success successText={successText} />
                         )}
 
-                    {pageTypeContext.pageType === 'success' ? (
-                        <Success successText={successText} />
-                    ) : (
-                        <Form onSubmit={} />
-                    )}
+                        {pageTypeContext.pageType === PAGE_TYPE.FORM &&
+                            formContentText && (
+                                <ModalContent>{formContentText}</ModalContent>
+                            )}
+
+                        {pageTypeContext.pageType === PAGE_TYPE.FORM && (
+                            <Form
+                                onSubmit={onSubmit}
+                                sheetMonkeyUrl={sheetMonkeyUrl}
+                            />
+                        )}
+                    </>
                 </Modal>
             )}
         </div>
