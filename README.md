@@ -2,7 +2,7 @@
 
 ## _React Feedback Component_
 
-for [live demo](https://react-for-feedback-button.vercel.app/) 
+for [live demo](https://react-for-feedback-button.vercel.app/)
 there is a icon at right corner click it!
 
 ## Features
@@ -17,8 +17,8 @@ This repo is an npm package. for use:
 ty-feedbkack-button requires [Node.js](https://nodejs.org/) to run.
 
 ```sh
-npm i ty-feedbkack-button
-add  import TYFeedback from 'ty-feedbkack-button'
+npm i ty-feedbkack-library
+add  import TYFeedback from 'ty-feedbkack-library'
 use <TYFeedback sheetMonkeyUrl='u need to sheet monkey url [sheetMonkey](https://sheetmonkey.io/)' />
 ```
 
