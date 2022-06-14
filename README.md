@@ -2,7 +2,7 @@
 
 ## _React Feedback Component_
 
-for [live demo](https://react-for-feedback-button-6czlghbxv-oguzhansezer.vercel.app/)
+for [live demo](https://react-for-feedback-button.vercel.app/) 
 there is a icon at right corner click it!
 
 ## Features
