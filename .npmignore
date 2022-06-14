@@ -11,3 +11,4 @@ oldconfig.js
 jest.config.js
 jsdom.setup.cjs
 serve
+build.js

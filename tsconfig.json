@@ -15,7 +15,8 @@
 
         "target": "es6",
         "declaration": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "emitDeclarationOnly": true //turns of compilations
     },
 
     "exclude": ["**/*.test.ts"]
