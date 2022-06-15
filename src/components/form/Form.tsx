@@ -5,7 +5,7 @@ import { Button } from '../button';
 import { PageValidateContext } from '../../providers/PageValidateProvider';
 import { PageContext } from '../../providers/PageProvider';
 import { PAGE_TYPE } from '../../constants';
-
+import { postForm } from '../../service/postForm';
 interface Props {
     onSubmit: () => void;
     sheetMonkeyUrl: string;
@@ -15,28 +15,21 @@ export const Form = (props: Props) => {
     const pageValidateContext = useContext(PageValidateContext);
     const pageContext = useContext(PageContext);
     const { onSubmit, sheetMonkeyUrl } = props;
+
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         pageValidateContext.handleValidate(e.target.value.trim().length > 3);
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (!ref.current) return;
-        fetch(sheetMonkeyUrl as string, {
-            method: 'POST',
-            body: new FormData(ref.current)
-        })
-            .then(res => {
-                if (res.ok) {
-                    pageContext.changePage(PAGE_TYPE.SUCCESS);
-                    console.log('SUCCESSFULLY SUBMITTED', res);
-                    onSubmit?.();
-                } else {
-                    console.log('ERROR SUBMITTING', res);
-                    //hata ekranı göster
-                }
-            })
-            .catch(err => console.log(err));
+        const result = await postForm({ sheetMonkeyUrl, ref });
+        console.log(result, 'mylog');
+        if (result) {
+            onSubmit?.();
+            pageContext.changePage(PAGE_TYPE.SUCCESS);
+        } else {
+            console.log('ERROR SUBMITTING', result);
+        }
     };
     return (
         <Container>
@@ -45,6 +38,7 @@ export const Form = (props: Props) => {
                 method='post'
                 onSubmit={handleSubmit}
                 ref={ref}
+                data-testid='form-testid'
             >
                 <Wrapper>
                     <TextArea onChange={handleChange} />

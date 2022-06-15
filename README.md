@@ -22,6 +22,13 @@ add  import TYFeedback from 'ty-feedbkack-library'
 use <TYFeedback sheetMonkeyUrl='u need to sheet monkey url [sheetMonkey](https://sheetmonkey.io/)' />
 ```
 
+!Also you can use with clone for developing
+
+```sh
+yarn install
+yarn start
+```
+
 Feedbacks at [google sheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTrQrVzfPNG1Ao3IhbiITbzsJq3oTVF5ADD2SuQxMONRXRlEU-hYslVY-xfMuvVGA94NgCIQWj9XgLi/pubhtml)
 
 ## Props (this area will be updated)

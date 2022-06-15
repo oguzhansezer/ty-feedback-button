@@ -22,6 +22,7 @@ export const ModalTitle = (props: Props) => {
             titleColor={titleColor}
             titleAlign={titleAlign}
             {...restProps}
+            data-testid={'modal-title-testid'}
         >
             {children}
         </Container>

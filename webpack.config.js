@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
-    entry: './serve/serve.tsx',
+    entry: './serve/index.tsx',
     devtool: 'inline-source-map',
     output: {
         path: path.join(__dirname, '/webpack-dist'),

@@ -8,15 +8,14 @@ interface Props {
     className?: string;
 }
 
-export const Feedback = (props: Props) => {
-    const {
-        mountNode = document.body,
-        onClick,
-        className,
-        ...restProps
-    } = props;
+export const Feedback = (props: Props): JSX.Element => {
+    const { mountNode = document.body, onClick, className } = props;
     return ReactDOM.createPortal(
-        <Container {...restProps} onClick={onClick} className={className}>
+        <Container
+            onClick={onClick}
+            className={className}
+            data-testid={'feedback-container-testid'}
+        >
             <FeedbackIcon width={60} height={60} />
         </Container>,
         mountNode as HTMLElement

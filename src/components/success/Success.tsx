@@ -7,7 +7,11 @@ export interface Props {
 
 export const Success = (props: Props) => {
     const { successText } = props;
-    return <SuccessText>{successText}</SuccessText>;
+    return (
+        <SuccessText data-testid={'succes-text-testid'}>
+            {successText}
+        </SuccessText>
+    );
 };
 
 const SuccessText = styled.div`

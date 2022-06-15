@@ -16,7 +16,7 @@ export interface ModalProps {
     zIndex: number;
 }
 
-const Modal = (props: ModalProps) => {
+const Modal = (props: ModalProps): JSX.Element => {
     const {
         children,
         className,
@@ -42,24 +42,30 @@ const Modal = (props: ModalProps) => {
         }
     };
 
-    return isOpen && isVisible
-        ? ReactDOM.createPortal(
-              <div>
-                  <ModalOverlay zIndex={zIndex} onClose={handleOnClose} />
-                  <ModalContainer
-                      onClose={handleOnClose}
-                      zIndex={zIndex + 1}
-                      closable={closable}
-                      label={label}
-                      width={width}
-                      className={className}
-                      {...restProps}
-                  >
-                      {children}
-                  </ModalContainer>
-              </div>,
-              mountNode as HTMLElement
-          )
-        : null;
+    return isOpen && isVisible ? (
+        ReactDOM.createPortal(
+            <div data-testid='modal-testid' className={className}>
+                <ModalOverlay
+                    zIndex={zIndex}
+                    onClose={handleOnClose}
+                    data-testid='modal-child-overlay-testId'
+                />
+                <ModalContainer
+                    onClose={handleOnClose}
+                    zIndex={zIndex + 1}
+                    closable={closable}
+                    label={label}
+                    width={width}
+                    {...restProps}
+                    data-testid='modal-child-container-testId'
+                >
+                    {children}
+                </ModalContainer>
+            </div>,
+            mountNode as HTMLElement
+        )
+    ) : (
+        <></>
+    );
 };
 export default Modal;

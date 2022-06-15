@@ -4,15 +4,12 @@ import styled from 'styled-components';
 export interface Props {
     maxLength?: number;
     placeholder?: string;
-    value?: string;
     onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-    onBlur?: () => void;
-    onFocus?: () => void;
     className?: string;
 }
 
 export const TextArea = (props: Props) => {
-    const { maxLength, onChange } = props;
+    const { maxLength, onChange, className } = props;
     return (
         <Label>
             <Input
@@ -20,6 +17,8 @@ export const TextArea = (props: Props) => {
                 placeholder='Enter Feedback...'
                 name='Feedback'
                 onChange={onChange}
+                data-testid={'text-area-testid'}
+                className={className}
             />
         </Label>
     );

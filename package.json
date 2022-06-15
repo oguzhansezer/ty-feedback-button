@@ -1,6 +1,6 @@
 {
     "name": "ty-feedbkack-library",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "Oguzhan SEZER feedback react component",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
@@ -11,7 +11,7 @@
     "scripts": {
         "start": "webpack serve --mode development --open --hot",
         "build": "node ./build.js ",
-        "test": "jest ",
+        "test": "jest --coverage ",
         "prettier": "prettier --write .",
         "lint": "eslint \"src/**/*.{ts,tsx}\"",
         "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",

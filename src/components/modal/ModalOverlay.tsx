@@ -10,7 +10,13 @@ export interface ModalOverlayProps {
 
 export const ModalOverlay = (props: ModalActionProps) => {
     const { onClose } = props;
-    return <Container onClick={onClose}></Container>;
+    return (
+        <Container
+            onClick={onClose}
+            data-testid='modal-overlay-testid'
+            zIndex={props.zIndex}
+        ></Container>
+    );
 };
 
 const Container = styled.div<ModalOverlayProps>`

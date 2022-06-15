@@ -14,3 +14,4 @@ serve
 build.js
 rtl.setup.ts
 package2.json
+coverage

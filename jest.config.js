@@ -8,13 +8,17 @@ module.exports = {
     setupFilesAfterEnv: ['<rootDir>/rtl.setup.ts'],
     rootDir: './',
     testMatch: ['**/*.test.ts?(x)'],
-
     collectCoverageFrom: [
         '!**/node_modules/**',
-        '<rootDir>/*.ts?(x)',
-        '**/*.d.ts?(x)',
+        'src/*/**/**.ts?(x)',
+        '!src/*/**/index.ts?(x)',
+        '!**/*.d.ts?(x)',
         '!serve/**/*ts?(x)',
-        '!dist/**/*.ts?(x)'
+        '!dist/**/*.ts?(x)',
+        '!src/providers/**/*.ts?(x)',
+        '!src/styles/**/*.ts?(x)',
+        '!src/icons/**/*.ts?(x)',
+        '!src/service/**/*.ts?(x)'
     ],
     coverageThreshold: {
         global: {

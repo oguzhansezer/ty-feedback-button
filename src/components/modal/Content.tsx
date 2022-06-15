@@ -13,10 +13,15 @@ export const ModalContent = (props: Props) => {
         textAlign = 'left',
         textColor = 'black',
         children,
-        ...restProps
+        className = ''
     } = props;
     return (
-        <Container textAlign={textAlign} textColor={textColor} {...restProps}>
+        <Container
+            textAlign={textAlign}
+            textColor={textColor}
+            className={className}
+            data-testid='modal-content-testid'
+        >
             {children}
         </Container>
     );
