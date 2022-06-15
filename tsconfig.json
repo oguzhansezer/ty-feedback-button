@@ -3,20 +3,18 @@
     "compilerOptions": {
         "esModuleInterop": true,
         "jsx": "react",
-        "types": ["node", "jest"],
-        "module": "es2015",
+        "types": ["node", "jest", "@testing-library/jest-dom", "jest"],
+        "module": "esnext",
         "moduleResolution": "node",
-        "lib": ["dom", "esnext", "ES2015", "es2016", "es5"],
+        "lib": ["dom", "esnext", "es2016", "es5"],
         "strict": true,
         "noImplicitAny": true,
         "noUnusedLocals": true,
-        "outDir": "dist/esm",
         "sourceMap": true,
-
-        "target": "es6",
+        "target": "esnext",
         "declaration": true,
-        "allowSyntheticDefaultImports": true,
-        "emitDeclarationOnly": true //turns of compilations
+        "allowSyntheticDefaultImports": true
+        // "emitDeclarationOnly": true //turns of compilations
     },
 
     "exclude": ["**/*.test.ts"]

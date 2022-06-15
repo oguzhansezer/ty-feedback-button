@@ -12,3 +12,5 @@ jest.config.js
 jsdom.setup.cjs
 serve
 build.js
+rtl.setup.ts
+package2.json

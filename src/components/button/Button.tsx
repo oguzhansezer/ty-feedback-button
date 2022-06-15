@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+        cssProps {
     children?: React.ReactNode;
     disabled?: boolean;
 }
@@ -9,8 +11,12 @@ export interface cssProps {
     borderColor?: string;
 }
 export const Button = (props: Props) => {
-    const { children, disabled } = props;
-    return <SubmitButton disabled={disabled}>{children}</SubmitButton>;
+    const { children, disabled, ...restProps } = props;
+    return (
+        <SubmitButton disabled={disabled} {...restProps}>
+            {children}{' '}
+        </SubmitButton>
+    );
 };
 
 const SubmitButton = styled.button`

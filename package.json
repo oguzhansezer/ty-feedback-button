@@ -1,6 +1,6 @@
 {
     "name": "ty-feedbkack-library",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "description": "Oguzhan SEZER feedback react component",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
@@ -20,32 +20,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "styled-components": "^5.3.5"
-    },
-    "devDependencies": {
-        "@types/jest": "^28.1.1",
-        "@types/node": "^17.0.42",
-        "@types/react": "^18.0.12",
-        "@types/react-dom": "^18.0.5",
-        "@types/styled-components": "^5.1.25",
-        "esbuild": "^0.14.43",
-        "html-webpack-plugin": "^5.5.0",
-        "jsdom": "^19.0.0",
-        "npm-dts": "^1.3.11",
-        "prettier": "^2.6.2",
-        "ts-jest": "^28.0.4",
-        "ts-loader": "^9.3.0",
-        "typescript": "^4.7.3",
-        "webpack": "^5.73.0",
-        "webpack-cli": "^4.9.2",
-        "webpack-dev-server": "^4.9.2"
-    },
-    "peerDependencies": {
-        "@types/styled-components": "^5.1.25",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
         "styled-components": "^5.3.5"
     },
     "browserslist": {
@@ -59,5 +35,27 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "12.1.5",
+        "@types/styled-components": "^5.1.25",
+        "@typescript-eslint/eslint-plugin": "^5.28.0",
+        "esbuild": "^0.14.43",
+        "eslint": "^8.17.0",
+        "html-webpack-plugin": "^5.5.0",
+        "jsdom": "^19.0.0",
+        "npm-dts": "^1.3.11",
+        "prettier": "^2.7.0",
+        "ts-jest": "^28.0.5",
+        "ts-loader": "^9.3.0",
+        "typescript": "^4.7.3",
+        "webpack": "^5.73.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.9.2"
+    },
+    "peerDependencies": {
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
     }
 }
