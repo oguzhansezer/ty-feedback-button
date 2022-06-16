@@ -18,6 +18,9 @@ ty-feedbkack-button requires [Node.js](https://nodejs.org/) to run.
 
 ```sh
 npm i ty-feedbkack-library
+
+For usage 
+```sh
 import TYFeedback from 'ty-feedbkack-library'
 <TYFeedback sheetMonkeyUrl='u need to sheet monkey url [sheetMonkey](https://sheetmonkey.io/)' />
 ```
