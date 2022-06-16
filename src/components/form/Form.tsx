@@ -17,19 +17,22 @@ export const Form = (props: Props) => {
     const { onSubmit, sheetMonkeyUrl } = props;
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        pageValidateContext.handleValidate(e.target.value.trim().length > 3);
+        pageValidateContext.handleValidate(
+            e.target.value.trim()?.length > 3 || false
+        );
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const result = await postForm({ sheetMonkeyUrl, ref });
-        console.log(result, 'mylog');
-        if (result) {
-            onSubmit?.();
-            pageContext.changePage(PAGE_TYPE.SUCCESS);
-        } else {
-            console.log('ERROR SUBMITTING', result);
-        }
+        postForm({ sheetMonkeyUrl, ref }).then(res => {
+            console.log(res);
+            if (res) {
+                onSubmit?.();
+                pageContext.changePage(PAGE_TYPE.SUCCESS);
+            } else {
+                console.log('ERROR SUBMITTING', res);
+            }
+        });
     };
     return (
         <Container>

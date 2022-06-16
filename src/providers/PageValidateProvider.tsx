@@ -1,13 +1,13 @@
 import React, { createContext, useState } from 'react';
 
-export interface PageValidateContext {
+export interface IPageValidateContext {
     pageValidate: boolean;
     handleValidate: (value: boolean) => void;
 }
 export interface Props {
     children: React.ReactNode;
 }
-export const PageValidateContext = createContext<PageValidateContext>({
+export const PageValidateContext = createContext<IPageValidateContext>({
     pageValidate: false,
     handleValidate: () => {}
 });
