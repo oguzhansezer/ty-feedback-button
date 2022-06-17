@@ -4,6 +4,7 @@
 
 for [live demo](https://react-for-feedback-button.vercel.app/)
 there is a icon at right corner click it!
+Feedbacks at [google sheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTrQrVzfPNG1Ao3IhbiITbzsJq3oTVF5ADD2SuQxMONRXRlEU-hYslVY-xfMuvVGA94NgCIQWj9XgLi/pubhtml)
 
 ## Features
 
@@ -32,9 +33,9 @@ yarn install
 yarn start
 ```
 
-Feedbacks at [google sheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTrQrVzfPNG1Ao3IhbiITbzsJq3oTVF5ADD2SuQxMONRXRlEU-hYslVY-xfMuvVGA94NgCIQWj9XgLi/pubhtml)
 
-## Props (this area will be updated)
+
+## Props for <TYFeedback />
 
 | Prop                    | type                          | isRequired |
 | ----------------------- | ----------------------------- | ---------- |
