@@ -35,7 +35,7 @@ yarn start
 
 
 
-## Props for <TYFeedback />
+## Props for TYFeedback 
 
 | Prop                    | type                          | isRequired |
 | ----------------------- | ----------------------------- | ---------- |
